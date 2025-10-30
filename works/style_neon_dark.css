@@ -1,0 +1,27 @@
+:root {
+    --bg: #000;
+    --main: #111;
+    --accent: #39ff14;
+    --text: #eaeaea;
+}
+
+body {
+    background-color: var(--bg);
+    color: car(--text);
+    font-family: "Zen Maru Gothic", sans-serif;
+}
+
+header {
+    background: var(--main);
+    color: var(--accent);
+    text-align: center;
+    padding: 60px 20px;
+    box-shadow: 0 0 14px var(--accent);
+}
+
+a.btn {
+    background-color: var(--accent);
+    color: #111;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
