@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap');
 :root{--pink-1:#fff6f9;--pink-2:#ffeaf1;--brand:#ffb6c1;--brand-2:#ffd1dc;--brand-3:#ff8fa3;--text:#333;}
 *{box-sizing:border-box}
-body{font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif;background:linear-gradient(180deg,var(--pink-1),var(--pink-2));color:var(--text);margin:0;text-align:center}
+body{font-size: 18px;font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif;background:linear-gradient(180deg,var(--pink-1),var(--pink-2));color:var(--text);margin:0;text-align:center}
 a{color:#ff4f82}
 header{background-color:var(--brand);color:#fff;padding:60px 20px}
 header h1{margin:0;font-size:2rem}
