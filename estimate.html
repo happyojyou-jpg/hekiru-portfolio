@@ -1,63 +1,7 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>見積り自動計算 - 桐間へきる Web制作</title>
-<link rel="stylesheet" href="style.css"></head><body>
-<header><h1>🧮 見積り自動計算</h1><p>ざっくり費用感を確認できます（正式見積はヒアリング後）。</p></header>
-<section class="detail">
-  <div class="form-row">
-    <div><label>ページ数</label><input type="number" id="pages" value="3" min="1"></div>
-    <div><label>テンプレート利用</label><select id="template"><option value="yes">はい（割引）</option><option value="no">いいえ（オリジナル）</option></select></div>
-  </div>
-  <label><input type="checkbox" id="map"> Googleマップ埋め込み</label>
-  <label><input type="checkbox" id="form"> お問い合わせフォーム設置（Googleフォーム）</label>
-  <label><input type="checkbox" id="assets"> 素材準備（画像・アイコンなど）</label>
-  <div class="buttons" style="margin-top:14px"><a href="#" class="btn" id="calc">計算する</a><a href="price.html" class="btn">料金プランへ</a></div>
-  <h2>概算結果</h2>
-  <table class="table">
-    <tr><th>内訳</th><th>金額</th></tr>
-    <tr><td>ベース（ページ数）</td><td id="base">-</td></tr>
-    <tr><td>テンプレート割引</td><td id="tpl">-</td></tr>
-    <tr><td>Googleマップ</td><td id="mapi">-</td></tr>
-    <tr><td>お問い合わせフォーム</td><td id="formi">-</td></tr>
-    <tr><td>素材準備</td><td id="asseti">-</td></tr>
-    <tr><th>概算合計（税込）</th><th id="total">-</th></tr>
-  </table>
-  <p class="note">※ ラフな目安です。要件により上下します。正式なお見積りは <a href="brief.html">事前ヒアリング</a> からご連絡ください。</p>
-</section>
-
-  <footer>
-    <div class="links">
-      <a href="about.html" class="btn">👤 プロフィール</a>
-      <a href="price.html" class="btn">💰 料金プラン</a>
-      <a href="estimate.html" class="btn">🧮 見積り自動計算</a>
-      <a href="brief.html" class="btn">📝 事前ヒアリング</a>
-      <a href="faq.html" class="btn">❓ よくある質問</a>
-      <a href="policies.html" class="btn">📄 ポリシー</a>
-      <a href="contact.html" class="btn">📩 お問い合わせ</a>
-    </div>
-    <p>&copy; 2025 桐間へきる</p>
-  </footer>
-
-<script>
-document.getElementById('calc').addEventListener('click', function(e){e.preventDefault();
-  const pages = Math.max(1, parseInt(document.getElementById('pages').value||'1'));
-  const tpl = document.getElementById('template').value === 'yes';
-  const addMap = document.getElementById('map').checked;
-  const addForm = document.getElementById('form').checked;
-  const addAssets = document.getElementById('assets').checked;
-  const unit = 4000;
-  let base = pages * unit;
-  let tplDiscount = tpl ? Math.min(5000, Math.round(base*0.15)) : 0;
-  let m = addMap ? 3000 : 0;
-  let f = addForm ? 3000 : 0;
-  let a = addAssets ? 3000 : 0;
-  let total = base - tplDiscount + m + f + a;
-  function yen(x){return '¥'+x.toLocaleString('ja-JP');}
-  document.getElementById('base').textContent = yen(base);
-  document.getElementById('tpl').textContent = tpl?('-'+yen(tplDiscount)):yen(0);
-  document.getElementById('mapi').textContent = yen(m);
-  document.getElementById('formi').textContent = yen(f);
-  document.getElementById('asseti').textContent = yen(a);
-  document.getElementById('total').textContent = yen(total);
-});
-</script>
+<!DOCTYPE html><html lang="ja"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>見積り自動計算 | 桐間へきる Web制作ポートフォリオ</title><link rel="stylesheet" href="style.css"></head><body>
+<header><h1>見積り自動計算</h1><p>桐間へきる Web制作ポートフォリオ</p></header>
+<main><section class="template-detail"><p>ご希望内容に応じて概算費用を計算します。</p></section></main>
+<footer><p>&copy; 2025 桐間へきる</p></footer>
 </body></html>
