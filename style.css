@@ -9,7 +9,8 @@ main{padding:28px 0}
 .card .thumb{width:100%;height:auto;display:block}
 .card h2{font-size:1.05rem;margin:14px 14px 6px}
 .buttons{display:flex;gap:10px;flex-wrap:wrap;margin:10px 14px 16px}
-.btn{display:inline-block;background:#fff;border:1px solid #ddd;padding:10px 14px;border-radius:10px;text-decoration:none;color:#333;transition:.15s;font-size:1.05rem}
+.btn{display:inline-block;background:#fff;border:1px solid #ddd;padding:10px 14px;border-radius:10px;text-decoration:none;color:#333;transition:.15s;font-size:1.05rem;
+text-align: center;display: flex;align-items: center;justify-content: center;}
 .btn.demo{background:#f6faff;border-color:#cfe5ff}.btn:hover{transform:translateY(-1px) scale(1.01)}
 footer{margin-top:30px;padding:24px 16px 40px;background:#fafafa;border-top:1px solid #eee;text-align:center}
 .links{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:1200px;margin:0 auto 10px}
