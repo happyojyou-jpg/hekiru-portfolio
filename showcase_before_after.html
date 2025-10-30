@@ -1,27 +1,45 @@
-<!DOCTYPE html><html lang="ja"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ビフォーアフター - 桐間へきる ポートフォリオ</title>
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Before / After サンプル - 桐間へきる</title>
 <link rel="stylesheet" href="style.css"></head><body>
-<header>
-  <h1>ビフォーアフター</h1>
-  <p>デザイン改善のビフォーアフター例です。</p>
-</header>
-<main style="max-width:1100px;margin:30px auto;padding:0 20px;">
-  <section class="gallery" style="display:grid;grid-template-columns:1fr 1fr;gap:30px;">
-    <div class="card">
-      <img src="images/previews/thumbnail5.svg" alt="Beforeデザイン" class="thumb">
-      <h2>Before（修正前）</h2>
-      <p>余白が少なく、文字が詰まって見える状態。</p>
+<header><h1>🪄 Before / After サンプル</h1><p>デザイン改善をスライダーで比較できます（デモ画像）。</p></header>
+<section class="detail">
+  <div class="compare" id="cmp1">
+    <img src="images/previews/simple_white.png" alt="Before">
+    <div class="after" style="width:50%"><img src="images/previews/streamer_pink.png" alt="After"></div>
+    <div class="handle"></div>
+    <input type="range" min="0" max="100" value="50" aria-label="比較スライダー">
+  </div>
+  <p class="note">画像はダミーです。実案件のスクリーンショットに差し替えると効果的です。</p>
+  <div class="buttons" style="margin-top:14px"><a href="index.html" class="btn">🏠 トップへ</a><a href="price.html" class="btn">💰 料金を見る</a></div>
+</section>
+
+  <footer>
+    <div class="links">
+      <a href="about.html" class="btn">👤 プロフィール</a>
+      <a href="price.html" class="btn">💰 料金プラン</a>
+      <a href="estimate.html" class="btn">🧮 見積り自動計算</a>
+      <a href="brief.html" class="btn">📝 事前ヒアリング</a>
+      <a href="faq.html" class="btn">❓ よくある質問</a>
+      <a href="policies.html" class="btn">📄 ポリシー</a>
+      <a href="contact.html" class="btn">📩 お問い合わせ</a>
     </div>
-    <div class="card">
-      <img src="images/previews/thumbnail1.svg" alt="Afterデザイン" class="thumb">
-      <h2>After（改善後）</h2>
-      <p>余白と配色を調整し、柔らかく見やすい構成に改善。</p>
-    </div>
-  </section>
-</main>
-<footer>
-  <div class="links"><a class="btn" href="index.html">← トップページに戻る</a></div>
-  <p>&copy; 2025 桐間へきる</p>
-</footer>
+    <p>&copy; 2025 桐間へきる</p>
+  </footer>
+
+<script>
+function initCompare(id){
+  const wrap = document.getElementById(id);
+  const after = wrap.querySelector('.after');
+  const handle = wrap.querySelector('.handle');
+  const range = wrap.querySelector('input[type=range]');
+  function update(){
+    const v = range.value;
+    after.style.width = v + '%';
+    handle.style.left = v + '%';
+  }
+  range.addEventListener('input', update);
+  update();
+}
+initCompare('cmp1');
+</script>
 </body></html>
