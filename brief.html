@@ -1,7 +1,63 @@
-<!DOCTYPE html><html lang="ja"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>事前ヒアリング | 桐間へきる Web制作ポートフォリオ</title><link rel="stylesheet" href="style.css"></head><body>
-<header><h1>事前ヒアリング</h1><p>桐間へきる Web制作ポートフォリオ</p></header>
-<main><section class="template-detail"><p>制作前に必要な情報をヒアリングするフォーム例です。</p></section></main>
-<footer><p>&copy; 2025 桐間へきる</p></footer>
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>事前ヒアリング - 桐間へきる Web制作</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<header><h1>📝 事前ヒアリング</h1><p>この内容を送っていただけると、お見積りがスムーズです。</p></header>
+<section class="detail">
+  <form onsubmit="copyBrief();return false;">
+    <div class="form-row">
+      <div><label>お名前</label><input type="text" id="name" placeholder="例：桐間 へきる"></div>
+      <div><label>メール</label><input type="email" id="email" placeholder="example@example.com"></div>
+    </div>
+    <label>サイトの目的</label><input type="text" id="purpose" placeholder="例：配信者の自己紹介／店舗紹介">
+    <label>ページ構成</label><input type="text" id="pages" placeholder="例：トップ／自己紹介／メニュー">
+    <div class="form-row">
+      <div><label>納期</label><input type="text" id="due" placeholder="例：11/30 まで"></div>
+      <div><label>ご予算</label><input type="text" id="budget" placeholder="例：3万円くらい"></div>
+    </div>
+    <label>参考URL（任意）</label><input type="text" id="refs" placeholder="https://...">
+    <label>素材の有無</label><input type="text" id="assets" placeholder="ロゴ・写真・文章 など">
+    <label>公開方法</label><input type="text" id="hosting" placeholder="GitHub Pages／他サーバー など">
+    <label>その他希望</label><textarea id="etc" rows="4" placeholder="色、雰囲気、フォント、注意事項など"></textarea>
+    <div class="buttons" style="margin-top:14px">
+      <a href="#" class="btn" onclick="copyBrief()">内容をコピー</a>
+      <a href="contact.html" class="btn">Googleフォームで送る</a>
+    </div>
+    <p class="note">「内容をコピー」を押すと、下の欄に整形されます。メールやSNSに貼り付けて送ってください。</p>
+    <h2>コピー用テキスト</h2>
+    <textarea id="out" rows="10" style="width:100%"></textarea>
+  </form>
+</section>
+
+  <footer>
+    <div class="links">
+      <a href="about.html" class="btn">👤 プロフィール</a>
+      <a href="price.html" class="btn">💰 料金プラン</a>
+      <a href="estimate.html" class="btn">🧮 見積り自動計算</a>
+      <a href="brief.html" class="btn">📝 事前ヒアリング</a>
+      <a href="faq.html" class="btn">❓ よくある質問</a>
+      <a href="policies.html" class="btn">📄 ポリシー</a>
+      <a href="contact.html" class="btn">📩 お問い合わせ</a>
+    </div>
+    <p>&copy; 2025 桐間へきる</p>
+  </footer>
+
+<script>
+function copyBrief(){
+  function v(id){return (document.getElementById(id).value||'').trim();}
+  const t = `【見積もり依頼】
+お名前：${v('name')}
+メール：${v('email')}
+目的：${v('purpose')}
+ページ構成：${v('pages')}
+納期：${v('due')}
+予算：${v('budget')}
+参考URL：${v('refs')}
+素材の有無：${v('assets')}
+公開方法：${v('hosting')}
+その他希望：${v('etc')}`;
+  const out = document.getElementById('out');
+  out.value = t;
+  out.select(); document.execCommand('copy');
+}
+</script>
 </body></html>
