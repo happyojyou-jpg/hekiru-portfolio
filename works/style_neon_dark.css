@@ -1,27 +1,8 @@
-:root {
-    --bg: #000;
-    --main: #111;
-    --accent: #39ff14;
-    --text: #eaeaea;
-}
 
-body {
-    background-color: var(--bg);
-    color: car(--text);
-    font-family: "Zen Maru Gothic", sans-serif;
-}
-
-header {
-    background: var(--main);
-    color: var(--accent);
-    text-align: center;
-    padding: 60px 20px;
-    box-shadow: 0 0 14px var(--accent);
-}
-
-a.btn {
-    background-color: var(--accent);
-    color: #111;
-    padding: 10px 20px;
-    border-radius: 6px;
-}
+:root{--bg:#000000;--main:#0d0d0d;--accent:#39ff14;--text:#eaeaea;}
+body{background:var(--bg);color:var(--text);font-family:"Zen Maru Gothic","Noto Sans JP","Hiragino Kaku Gothic ProN",system-ui,Arial,sans-serif;margin:0}
+header{text-align:center;padding:60px 20px;background:linear-gradient(135deg,var(--main), var(--bg));box-shadow:0 0 18px var(--accent) inset;color:#eaeaea }
+h1{margin:0 0 8px}
+.detail{background:#111; border-radius:12px; padding:24px; max-width:900px; margin:24px auto; color:#eaeaea }
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;background:var(--accent);color:#000;}
+.preview{width:100%;border-radius:12px;display:block}
