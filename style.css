@@ -19,7 +19,7 @@ footer .links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin
 footer .btn{background:#ececec}
 main{padding:24px}
 .gallery {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 40px auto;
   padding: 0 20px;
 }
